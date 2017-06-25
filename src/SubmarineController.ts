@@ -1,50 +1,63 @@
-export const beatles: string[] = ['John', 'Paul', 'George', 'Ringo'];
+import { albumName, Guest, guestName, locationType } from './guest';
 
-function isBeatle(host: string) {
-  for (const beatle of beatles) {
-    if (host === beatle) return true;
-  }
-  return false;
-}
+import { Beatle } from './beatle';
+
+type albumCount = number;
 
 export class SubmarineController {
-  constructor(private guests) {}
 
-  leaderBoard() {
-    type albumName = string;
-    type albumCount = number;
-    const albumMap: Map<albumName, albumCount> = new Map();
-    for (const { favourite_album: album } of this.guests) {
-      if (!albumMap.has(album)) {
-        albumMap.set(album, 1);
-      } else {
-        albumMap.set(album, albumMap.get(album) + 1);
-      }
+  // Internal models
+  private albumMap: Map<albumName, albumCount> = new Map();
+  private locationCountMap: { [location: string]: number } = {};
+  private beatleInviteCountMap: { [beatleName: string]: number } = {};
+  private guestList: Guest[] = [];
+
+  constructor(guests: Guest[]) {
+    for (const guest of guests) {
+      this.addGuest(guest);
     }
+  }
+
+  addGuest(guest: Guest) {
+    this.guestList.push(guest);
+    this.addInvite(guest.guest_of);
+    this.addAlbum(guest.favourite_album);
+    this.addLocation(guest.location);
+  }
+
+  // deleteGuest(name: guestName) {
+  //   // Could now be written
+  // }
+
+  leaderBoard(): any[] {
     const COUNT_POS = 1;
-    return [...albumMap.entries()].sort((a, b) => a[COUNT_POS] - b[COUNT_POS]);
+    return [...this.albumMap.entries()].sort((a, b) => a[COUNT_POS] - b[COUNT_POS]);
   }
 
   locations() {
-    const locationMap: { [key: string]: number } = {};
-    for (const { location } of this.guests) {
-      if (!locationMap[location]) locationMap[location] = 0;
-      locationMap[location]++;
-    }
-    return locationMap;
+    return this.locationCountMap;
   }
 
-  guestNumber(host: string): number {
-    if (!isBeatle(host)) {
-      console.error(`${host} is not a Beatle!`);
-      return 0;
+  guestNumber(host: Beatle): number {
+    return this.beatleInviteCountMap[host];
+  }
+
+  private addInvite(host: Beatle) {
+    if (!this.beatleInviteCountMap[host]) this.beatleInviteCountMap[host] = 1;
+    else this.beatleInviteCountMap[host]++;
+  }
+
+  private addAlbum(album: albumName) {
+    if (!this.albumMap.has(album)) {
+      this.albumMap.set(album, 1);
     } else {
-      let numGuests = 0;
-      for (const guest of this.guests) {
-        if (guest.guest_of === host) numGuests++;
-      }
-      return numGuests;
+      this.albumMap.set(album, this.albumMap.get(album) + 1);
     }
+  }
+
+  private addLocation(location: locationType) {
+    if (!this.locationCountMap[location]) this.locationCountMap[location] = 1;
+    else this.locationCountMap[location]++;
   }
 
 }

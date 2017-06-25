@@ -1,12 +1,15 @@
 import * as data from '../guests.json';
-import { beatles, SubmarineController } from './SubmarineController';
+import { Beatle } from './beatle';
+import { Guest } from './guest';
+import { SubmarineController } from './SubmarineController';
 
-const submarineController = new SubmarineController(data);
+const guests: Guest[] = Object.setPrototypeOf(data, Array.prototype);
+const submarineController = new SubmarineController(guests);
 
 function beatleGuests() {
-  for (const beatle of beatles) {
+  for (const beatle of Object.keys(Beatle)) {
     console.log(
-      `${beatle} has ${submarineController.guestNumber(beatle)} guests`
+      `${beatle} invited ${submarineController.guestNumber(beatle as Beatle)} guests`
     );
   }
 }
