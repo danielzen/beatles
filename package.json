@@ -1,0 +1,36 @@
+{
+  "name": "beatles",
+  "version": "1.0.0",
+  "description": "John, Paul, George and Ringo are planning to go on a magical mystery tour in their yellow submarine. In order for all their friends to be aboard they need a system to find out where to find them.",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "./node_modules/.bin/tsc && node build/app.js",
+    "test": "jasmine"
+  },
+  "author": "Daniel Zen",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^7.1.0",
+    "jasmine": "^2.6.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-webpack": "^2.0.3",
+    "typescript": "^2.4",
+    "webpack": "^3.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": false,
+      "es6": true,
+      "node": true,
+      "jasmine": true
+    },
+    "parserOptions": {
+      "sourceType": "module"
+    }
+  },
+  "dependencies": {
+    "babel-core": "^6.25.0"
+  }
+}

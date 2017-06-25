@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Aunt Jessie",
+    "location": "Octopus's Garden",
+    "guest_of": "Ringo",
+    "favourite_album": "Abbey Road"
+  },
+  {
+    "name": "Lucy",
+    "location": "Penny Lane",
+    "guest_of": "John",
+    "favourite_album": "Revolver"
+  },
+  {
+    "name": "Mr Mustard",
+    "location": "Buckingham Palace",
+    "guest_of": "Paul",
+    "favourite_album": "Abbey Road"
+  },
+  {
+    "name": "Billy Shears",
+    "location": "Abbey Road",
+    "guest_of": "Ringo",
+    "favourite_album": "Sgt. Pepper"
+  },
+  {
+    "name": "George Martin",
+    "location": "USSR",
+    "guest_of": "John",
+    "favourite_album": "White Album"
+  },
+  {
+    "name": "The Eggman",
+    "location": "Penny Lane",
+    "guest_of": "George",
+    "favourite_album": "Magical Mystery Tour"
+  },
+  {
+    "name": "Grandad",
+    "location": "Octopus's Garden",
+    "guest_of": "Paul",
+    "favourite_album": "White Album"
+  },
+  {
+    "name": "The Fool on the Hill",
+    "location": "Penny Lane",
+    "guest_of": "Paul",
+    "favourite_album": "Magical Mystery Tour"
+  },
+  {
+    "name": "Elenor Rigby",
+    "location": "Penny Lane",
+    "guest_of": "Ringo",
+    "favourite_album": "Revolver"
+  },
+  {
+    "name": "The Sun King",
+    "location": "India",
+    "guest_of": "George",
+    "favourite_album": "Magical Mystery Tour"
+  },
+  {
+    "name": "The Walrus",
+    "location": "Strawberry fields",
+    "guest_of": "John",
+    "favourite_album": "Magical Mystery Tour"
+  },
+  {
+    "name": "Maggie May",
+    "location": "Lime Street",
+    "guest_of": "Ringo",
+    "favourite_album": "Let it be"
+  },
+  {
+    "name": "Rita, (Meter Maid)",
+    "location": "Strawberry fields",
+    "guest_of": "Paul",
+    "favourite_album": "Sgt. Pepper"
+  },
+  {
+    "name": "Jude",
+    "location": "Octopus's Garden",
+    "guest_of": "Ringo",
+    "favourite_album": "Magical Mystery Tour"
+  },
+  {
+    "name": "Doctor Roberts",
+    "location": "Abbey Road",
+    "guest_of": "John",
+    "favourite_album": "Revolver"
+  },
+  {
+    "name": "Yogi",
+    "location": "India",
+    "guest_of": "George",
+    "favourite_album": "Revolver"
+  }
+]
