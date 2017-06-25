@@ -5,17 +5,19 @@
   "main": "src/app.ts",
   "scripts": {
     "start": "./node_modules/.bin/tsc && node build/app.js",
-    "test": "jasmine"
+    "test": "karma start"
   },
   "author": "Daniel Zen",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.25.0",
     "babel-loader": "^7.1.0",
     "jasmine": "^2.6.0",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
     "karma-webpack": "^2.0.3",
+    "ts-loader": "^2.2.0",
     "typescript": "^2.4",
     "webpack": "^3.0.0"
   },
@@ -29,8 +31,5 @@
     "parserOptions": {
       "sourceType": "module"
     }
-  },
-  "dependencies": {
-    "babel-core": "^6.25.0"
   }
 }

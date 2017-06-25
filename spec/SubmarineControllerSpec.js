@@ -1,6 +1,6 @@
 'use strict';
-import { Beatle } from '../build/beatle';
-import { SubmarineController } from '../build/SubmarineController';
+import { Beatle } from '../src/beatle';
+import { SubmarineController } from '../src/SubmarineController';
 import * as data from '../guests.json';
 
 const guests = Object.setPrototypeOf(data, Array.prototype);

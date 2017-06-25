@@ -28,9 +28,13 @@ module.exports = function (config) {
     },
 
     webpack: {
+      resolve: {
+        extensions: ['.js', '.ts', '.tsx', '.json']
+      },
       module: {
         loaders: [
           {test: /\.js/, exclude: /node_modules/, loader: "babel-loader"},
+          {test: /\.tsx?$/, loader: "ts-loader"},
           {test: /\.json/, loader: "json-loader"}
         ]
       },
