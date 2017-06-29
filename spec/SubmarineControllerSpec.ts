@@ -1,13 +1,11 @@
-'use strict';
 import { Beatle } from '../src/beatle';
+import { Guest } from '../src/guest';
 import { SubmarineController } from '../src/SubmarineController';
 import * as data from '../guests.json';
 
-const guests = Object.setPrototypeOf(data, Array.prototype);
+const guests: Guest[] = Object.setPrototypeOf(data, Array.prototype);
 
 const submarine = new SubmarineController(guests);
-
-//console.log('working');
 
 describe('SubmarineController', () => {
   it('shows john has 4 guests', () => {
@@ -39,14 +37,14 @@ describe('SubmarineController', () => {
 
   it('shows how many people are being picked up at each location', () => {
     expect(submarine.locations()).toEqual({
-      "Octopus's Garden": 3,
-      'Penny Lane': 4,
-      'Buckingham Palace': 1,
       'Abbey Road': 2,
-      USSR: 1,
-      India: 2,
+      'Buckingham Palace': 1,
+      'India': 2,
+      'Lime Street': 1,
+      'Octopus\'s Garden': 3,
+      'Penny Lane': 4,
       'Strawberry fields': 2,
-      'Lime Street': 1
+      'USSR': 1,
     });
   });
 });

@@ -1,20 +1,16 @@
-// Karma configuration
-// Generated on Sat Jun 24 2017 22:54:24 GMT-0400 (EDT)
+let webpackConfig = require('./webpack.config');
 
 module.exports = function (config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: "",
+    basePath: '',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ["jasmine"],
+    frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
-    files: [
-      {pattern: "spec/*Spec.js", watched: false},
-      {pattern: "spec/**/*Spec.js", watched: false}
-    ],
+    files: ['spec/**/*Spec.ts'],
 
     // list of files to exclude
     exclude: [],
@@ -23,28 +19,17 @@ module.exports = function (config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       // add webpack as preprocessor
-      'spec/*Spec.js': ['webpack'],
-      'spec/**/*Spec.js': ['webpack']
+      'spec/**/*.ts': ['webpack']
     },
 
-    webpack: {
-      resolve: {
-        extensions: ['.js', '.ts', '.tsx', '.json']
-      },
-      module: {
-        loaders: [
-          {test: /\.js/, exclude: /node_modules/, loader: "babel-loader"},
-          {test: /\.tsx?$/, loader: "ts-loader"},
-          {test: /\.json/, loader: "json-loader"}
-        ]
-      },
-      watch: true
-    },
+    webpack: webpackConfig,
+
+    mime: { 'text/x-typescript': ['ts','tsx'] },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ["progress"],
+    reporters: ['progress'],
 
     // web server port
     port: 9876,
@@ -61,7 +46,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ["Chrome"],
+    browsers: ['Chrome'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

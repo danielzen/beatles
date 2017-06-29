@@ -4,14 +4,14 @@
   "description": "John, Paul, George and Ringo are planning to go on a magical mystery tour in their yellow submarine. In order for all their friends to be aboard they need a system to find out where to find them.",
   "main": "src/app.ts",
   "scripts": {
-    "start": "./node_modules/.bin/tsc && node build/app.js",
+    "prestart": "webpack",
+    "start": "node build/compiled",
     "test": "karma start"
   },
   "author": "Daniel Zen",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.0",
+    "@types/jasmine": "^2.5.53",
     "jasmine": "^2.6.0",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
